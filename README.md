@@ -5,9 +5,9 @@
 ## 保護原網站
 
 - 原專案：`Shimmer0602/Swin-Forward` —— **不修改**。
-- 新專案（請自行建立）：`Shimmer0602/fb-page-bridge-legal` —— Public。
+- 新專案（已建立）：`Shimmer0602/fb-page-bridge-legal` —— Public。
 - 不使用 `swim-forward.com` 自訂網域，不修改 Cloudflare 或 Vercel。
-- 本套件截至交付時**尚未建立 GitHub 儲存庫、尚未上線**。
+- 新儲存庫已建立，網站檔案已上傳至 `Main` 分支；GitHub Pages 仍須在儲存庫 Settings → Pages 啟用並核對公開網址。
 
 ## 新儲存庫的預期檔案
 
@@ -23,15 +23,15 @@ style.css
 README.md
 ```
 
-## GitHub 網頁介面部署方式
+## GitHub Pages 啟用方式（程式碼已上傳）
 
-1. 開啟 <https://github.com/new>。Owner 選 `Shimmer0602`，Repository name 填 `fb-page-bridge-legal`，Visibility 選 **Public**，初始化 README 可選擇關閉（以便一次上傳本套件）。建立後確認 URL 是 `https://github.com/Shimmer0602/fb-page-bridge-legal`。
-2. 在新儲存庫 Code 頁面選 **Add file → Upload files**。解壓 ZIP，把檔案逐一拖進根目錄，Commit 到 `main`。
-3. 進入新儲存庫的 **Settings → Pages**，在 Build and deployment → Source 選 **Deploy from a branch**；Branch 選 `main`，Folder 選 `/(root)`，按 **Save**。
-4. 在 GitHub Pages 顯示網站 URL 後，用無痕／登出瀏覽器逐一打開下列網址，確認能看到完整內容，非 404／登入頁，且導覽連結正常。
-5. **確認網址已經真的能開啟**之後，再到 Meta App (`F.B Page Bridge`，App ID `1514619050494702`) 的 Settings → Basic 填入三個 URL。再次檢查實際 Dashboard 的 Required actions，再決定是否發佈 App；不要預設 GitHub Pages 部署就等於 Meta App 已上線。
+1. 開啟 <https://github.com/Shimmer0602/fb-page-bridge-legal/settings/pages>。
+2. 在 **Build and deployment → Source** 選擇 **Deploy from a branch**。
+3. 在 **Branch** 選擇 **Main**（大小寫以實際儲存庫為準），資料夾選 **/(root)**，按 **Save**。
+4. 等 GitHub Pages 頁面顯示公開網站網址，再以未登入／無痕瀏覽器逐一測試首頁及三個法律網址，確保頁面可見且無 404。
+5. 驗證成功後，才把法律頁面網址填入 Meta App Settings → Basic。此設定不會修改 SwimForward 網站及 DNS。
 
-## 預期網址（建立並啟用 GitHub Pages 後才存在）
+## 預期網址（啟用 GitHub Pages 後才可公開存取）
 
 - 首頁：<https://shimmer0602.github.io/fb-page-bridge-legal/>
 - 隱私權政策：<https://shimmer0602.github.io/fb-page-bridge-legal/privacy.html>
