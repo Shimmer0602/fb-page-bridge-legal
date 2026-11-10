@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Facebook Page Bridge 的資料存取、保存、傳輸及刪除政策。">
+<meta name="color-scheme" content="light">
+<title>隱私權政策｜F.B Page Bridge</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="mast"><div class="mast-inner">
+<div class="eyebrow">Independent Page Management Tool</div>
+<div class="brand">F.B Page Bridge</div>
+<p class="subbrand">獨立的 Facebook 粉絲專頁管理工具｜法律與資料處理資訊</p>
+<nav aria-label="網站導覽"><a href="./index.html">首頁</a><a href="./privacy.html" aria-current="page">隱私權政策</a><a href="./terms.html">服務條款</a><a href="./data-deletion.html">資料刪除說明</a></nav>
+</div></header>
+<main class="container" id="main"><article class="paper"><h1>隱私權政策</h1><p class="meta">生效日期：2026 年 11 月 9 日｜最後更新：2026 年 11 月 9 日</p>
+<p class="lead">本政策說明 F.B Page Bridge 如何透過 Meta Graph API 處理 Facebook 粉絲專頁資料，以及如何保存操作紀錄與接受資料請求。</p>
+<h2>一、工具與維護者</h2>
+<p>F.B Page Bridge（Meta Developer App ID：1514619050494702）由 Rone Tseng 個人開發及維護，目前未設立公司。本工具不開放公眾註冊，現階段僅供維護者管理其具有管理權限的兩個 Facebook 粉絲專頁：</p>
+<ul><li>星光科技觀測站</li><li>泳往直前 Swim-Forward</li></ul>
+<p>目前程式設定了上述粉專的操作允許清單。本政策僅涵蓋 F.B Page Bridge 本身，不取代 Facebook 或 Meta 的資料政策，也不同於 SwimForward 網站會員服務的隱私權政策。</p>
+<h2>二、存取的資料與用途</h2>
+<ul>
+<li><strong>授權身分與粉專：</strong>Facebook 授權帳號的基本身分資訊、可管理粉專的 ID、名稱、類別及權限，用於確認授權及選擇正確粉專。</li>
+<li><strong>貼文與照片：</strong>貼文 ID、文案、建立時間、連結、發布狀態及照片 ID，用於草稿預覽、發布、檢視和發文結果對帳。</li>
+<li><strong>留言：</strong>在查看時透過 API 讀取留言內容、留言者名稱或 ID、時間及相關數量，用於粉專管理。依目前程式設計，不將完整留言清單作為發布紀錄寫入 SQLite。</li>
+<li><strong>洞察：</strong>按需讀取媒體觀看、點擊、互動及影片觀看等彙總指標，用於查看成效。</li>
+<li><strong>授權範圍：</strong>目前包含 <code>pages_show_list</code>、<code>pages_read_engagement</code>、<code>pages_read_user_content</code>、<code>read_insights</code>、<code>pages_manage_posts</code>。</li>
+</ul>
+<p>工具不以蒐集粉絲名單為目的，不要求 Facebook 密碼，也不販售從 Facebook 取得的個人資料。</p>
+<h2>三、資料的儲存與處理環境</h2>
+<p>F.B Page Bridge 於受存取控制的託管執行環境運作。操作紀錄、草稿與相關圖片檔案可能保存於該環境的持久化儲存空間，而非一般訪客的瀏覽器。</p>
+<p>依目前 Bridge 實作，操作期間可能保存：</p>
+<ul>
+<li>發布請求的編號、粉專 ID、草稿 ID、操作類型、完整發文文字、圖片檔案參照及雜湊、建立及更新時間；</li>
+<li>Facebook 貼文和照片 ID、發布狀態、錯誤摘要，以及部分用於比對重複內容的貼文／照片 ID 快照；</li>
+<li>核准、發布、核對與刪除等稽核事件，以及必要的識別碼與有限訊息預覽；</li>
+<li>草稿內容與圖片檔案（依實際建立及上傳情況）；</li>
+<li>一次性核准碼的雜湊（用於核准驗證，不以明文持久儲存）。</li>
+</ul>
+<p>查看留言與洞察數據一般以按需查詢方式執行；除非因操作或錯誤診斷必須記錄，工具不以完整留言或洞察報表作為長期資料庫內容。具體記錄仍以當時系統實際運作為準。</p>
+<h2>四、授權及憑證</h2>
+<p>OAuth 授權憑證由受存取控制的憑證管理服務保管。依目前實作，Bridge 在執行時取得必要的 Page Access Token，僅於操作程序中使用，不主動將 Token 明文寫入 SQLite 稽核紀錄或公開網頁。</p>
+<p>授權可在 Facebook 的「設定 → 應用程式與網站」撤銷。撤銷不會自動刪除先前發布的 Facebook 貼文或工具已保存的紀錄。</p>
+<h2>五、資料傳輸與第三方服務</h2>
+<ul>
+<li><strong>Meta／Facebook：</strong>Bridge 使用 HTTPS 與 <code>graph.facebook.com</code> 通訊，讀取及管理有權存取的粉專內容。</li>
+<li><strong>託管及憑證管理服務：</strong>本工具目前使用 Muse 提供的執行、儲存與憑證管理服務，相關操作資料可能在該服務環境中處理。</li>
+<li><strong>GitHub Pages：</strong>此法律資訊網站由 GitHub 託管，網站本身不設登入、不執行自訂追蹤腳本或廣告程式；GitHub 仍可能為提供與保護網站服務而處理必要的連線紀錄。</li>
+</ul>
+<p>工具不將粉專資料出售給廣告商或資料經紀商，不以本工具建立獨立的廣告受眾，也不在此法律網站放置第三方分析程式碼。</p>
+<h2>六、保留與安全</h2>
+<p>目前 Bridge 尚未設定全面的自動資料清理期限；發布紀錄、草稿及稽核資訊可能保存至維護者人工清理或依有效刪除請求處理為止。必要時可能保留與資安、事故調查或法律義務有關的最少紀錄，並在可行情況下移除或去識別化非必要個人資料。</p>
+<p>採取包括粉專允許清單、發布前核准、Token 遮蔽、稽核及去重檢查等措施，降低誤用與重複發布風險；但無法保證系統完全沒有安全風險。</p>
+<h2>七、資料請求與刪除</h2>
+<p>若需查詢、更正或要求刪除本工具所處理的資料，請寄信至 <a href="mailto:shimmer0602@gmail.com">shimmer0602@gmail.com</a>，說明相關粉專、貼文連結或資料類型。維護者可能先核對請求者身分及權限；請勿寄送密碼、Access Token 或其他機密憑證。</p>
+<p>已發布於 Facebook 的內容須在 Meta 平台上另行處理。管理員可透過 Facebook／Meta Business Suite 或在經授權及核對後透過 Graph API 刪除指定內容。詳細方式請參閱 <a href="./data-deletion.html">資料刪除說明</a>。</p>
+<h2>八、政策變更與聯絡方式</h2>
+<p>若本工具用途、資料處理方式或服務提供者變更，將更新本頁內容及日期。管理及聯絡窗口：Rone Tseng（個人維護），<a href="mailto:shimmer0602@gmail.com">shimmer0602@gmail.com</a>。</p></article></main>
+<footer class="footer"><div class="footer-inner">© 2026 F.B Page Bridge · 個人維護 · <a href="mailto:shimmer0602@gmail.com">shimmer0602@gmail.com</a><br>
+本網站為獨立法律資訊頁，與 SwimForward 網站及其會員服務分開管理；並非 Meta 或 Facebook 官方網站。</div></footer>
+</body></html>
